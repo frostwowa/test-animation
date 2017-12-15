@@ -1,0 +1,13 @@
+include _mixins
+doctype html
+html
+  head
+    include _head
+
+  body(class=bodyClass)
+    .out(class=outClass)
+      block header
+        include ../partials/_header
+      block content
+    block scripts
+      script(type="text/javascript" src="js/app.js")
