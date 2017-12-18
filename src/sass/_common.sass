@@ -46,7 +46,7 @@ a
   color: $black
   
 .out
-  padding: 150px 0
+  padding: 20px 0
 
 
 .center
@@ -61,59 +61,61 @@ a
     padding: 25px 95px 25px 25px
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) 
   &__box
-    display: flex
-  &__box.hide &__pic
+    display: none
+    &.visible
+      display: flex
+  &__box.animate-out &__pic
     opacity: 0
     visibility: hidden
     transition-delay: .6s, .6s
-  &__box.show &__pic
+  &__box.animate-in &__pic
     opacity: 1
     transform: scale(1)
-  &__box.hide &__body
+  &__box.animate-out &__body
     opacity: 0
     transform: translateX(100px)
     transition-delay: .6s, .6s
-  &__box.show &__body
+  &__box.animate-in &__body
     opacity: 1
     transform: translateX(0px)
-  &__box.hide &__footer
+  &__box.animate-out &__footer
     opacity: 0
     transform: translateX(-100px)
     transition-delay: .6s, .6s
-  &__box.show &__footer
+  &__box.animate-in &__footer
     opacity: 1
     transform: translateX(0px)
-  &__box.hide &__stars .stars__preview
+  &__box.animate-out &__stars .stars__preview
     opacity: 0
-    transform: translateY(-150px)
-  &__box.show &__stars .stars__preview
+    transform: translateY(-40px)
+  &__box.animate-in &__stars .stars__preview
     opacity: 1
     transform: translateY(0px)
-  &__box.hide &__stars .stars__preview:first-child
+  &__box.animate-out &__stars .stars__preview:first-child
     transition-delay: .2s, .2s
-  &__box.hide &__stars .stars__preview:nth-child(2)
+  &__box.animate-out &__stars .stars__preview:nth-child(2)
     transition-delay: .3s, .3s
-  &__box.hide &__stars .stars__preview:nth-child(3)
+  &__box.animate-out &__stars .stars__preview:nth-child(3)
     transition-delay: .4s, .4s
-  &__box.hide &__stars .stars__preview:nth-child(4)
+  &__box.animate-out &__stars .stars__preview:nth-child(4)
     transition-delay: .5s, .5s
-  &__box.hide &__stars .stars__preview:nth-child(5)
+  &__box.animate-out &__stars .stars__preview:nth-child(5)
     transition-delay: .6s, .6s
-  &__box.show &__stars .stars__preview:first-child
+  &__box.animate-in &__stars .stars__preview:first-child
     transition-delay: .6s, .6s
-  &__box.show &__stars .stars__preview:nth-child(2)
+  &__box.animate-in &__stars .stars__preview:nth-child(2)
     transition-delay: .5s, .5s
-  &__box.show &__stars .stars__preview:nth-child(3)
+  &__box.animate-in &__stars .stars__preview:nth-child(3)
     transition-delay: .4s, .4s
-  &__box.show &__stars .stars__preview:nth-child(4)
+  &__box.animate-in &__stars .stars__preview:nth-child(4)
     transition-delay: .3s, .3s
-  &__box.show &__stars .stars__preview:nth-child(5)
+  &__box.animate-in &__stars .stars__preview:nth-child(5)
     transition-delay: .2s, .2s
   &__preview
     flex: 0 0 66.85%
   &__pic
     opacity: 0
-    transform: scale(0) 
+    transform: scale(.8) 
     font-size: 0
     transition: opacity .6s .6s, visibility .6s .6s, transform .8s .6s
   &__img
@@ -126,7 +128,7 @@ a
     padding-left: 40px
     margin-bottom: 40px
   &__menu
-    display: none
+    display: flex
     position: absolute
     top: 0
     left: 0
@@ -136,23 +138,38 @@ a
     align-items: center
     justify-content: center
     background: $white
+    opacity: 0
+    visibility: hidden
+    transition: opacity .2s, visibility .2s  
     z-index: 99  
     &.visible
-      display: flex
-  &__menu.visible &__item:first-child
-    transform: translateX(0px)
+      opacity: 1
+      visibility: visible 
+  &__menu.visible &__item
+    transform: translateY(0px)
     opacity: 1
+    &:nth-child(1)
+      transition-delay: .4s, .4s 
+    &:nth-child(2)
+      transition-delay: .6s, .6s 
+    &:nth-child(3)
+      transition-delay: .8s, .8s 
+    &:nth-child(4)
+      transition-delay: 1s, 1s 
+    &:nth-child(5)
+      transition-delay: 1.2s, 1.2s 
+    &:nth-child(6)
+      transition-delay: 1.4s, 1.4s
   &__item
     margin-bottom: 20px
     +fm
     font-size: 20px
     opacity: 0 
     color: $red 
-    transition: opacity 1.4s .6s, transform 1.4s .6s 
+    transform: translateY(20px)
+    transition: opacity .4s, transform .4s
     &:last-child
-      margin-bottom: 0
-    &:first-child
-      transform: translateX(300px)
+      margin-bottom: 0 
   &__body
     margin-bottom: 30px
     opacity: 0
@@ -184,11 +201,11 @@ a
     transition: transform .2s, color .2s
     &:last-child
       margin-bottom: 0
-    &.active
-      color: $black 
     &:hover
+      color: rgba($black,.5)
+    &.active
       transform: scale(1.2)
-      color: rgba($black, .75) 
+      color: $black 
   &__footer
     opacity: 0
     transform: translateX(70px)
@@ -204,18 +221,15 @@ a
     text-transform: uppercase
     letter-spacing: 3px 
     color: $red 
-    transition: transform .2s 
+    transition: all .2s 
     &:hover
-      transform: scale(1.1)
+      letter-spacing: 4px 
   &__burger
     position: absolute
     top: 25px
     right: 25px
-    animation-name: rotate
-    animation-duration: 2s
-    animation-iteration-count: infinite  
+    // animation: rotate 2s infinite  
   
-
 @keyframes rotate
   from
     transform: rotate(0deg)

@@ -4,6 +4,50 @@
 
 // tabs
 (function () {
+    var main = $('.js-main'),
+        burger = main.find('.js-main-burger'),
+        menu = main.find('.js-main-menu'),
+        link = main.find('.js-main-link'),
+        box = main.find('.js-main-box');
+
+    setTimeout(function(){
+        box.first().addClass('animate-in');
+    }, 100);
+
+    link.on('click', function(event){
+        event.preventDefault(); // equal = return false;
+
+        var _this = $(this),
+            index = _this.index(),
+            boxEl = box.eq(index);
+
+        link.removeClass('active');
+        _this.addClass('active');
+
+        box.removeClass('animate-in').addClass('animate-out');
+
+        setTimeout(function(){
+            box.removeClass('visible animate-out')
+
+            boxEl.addClass('visible');
+            setTimeout(function(){
+                boxEl.addClass('animate-in');
+            }, 100);
+        }, 1000);
+
+    });
+
+    burger.on('click', function(event){
+        event.preventDefault();
+
+        menu.toggleClass('visible');
+    });
+
+
+
+
+
+    // old
     var tabs = $('.js-list');
     tabs.each(function () {
         var thisTabs = $(this),
