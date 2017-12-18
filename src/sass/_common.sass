@@ -62,10 +62,60 @@ a
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) 
   &__box
     display: flex
+  &__box.hide &__pic
+    opacity: 0
+    visibility: hidden
+    transition-delay: .6s, .6s
+  &__box.show &__pic
+    opacity: 1
+    transform: scale(1)
+  &__box.hide &__body
+    opacity: 0
+    transform: translateX(100px)
+    transition-delay: .6s, .6s
+  &__box.show &__body
+    opacity: 1
+    transform: translateX(0px)
+  &__box.hide &__footer
+    opacity: 0
+    transform: translateX(-100px)
+    transition-delay: .6s, .6s
+  &__box.show &__footer
+    opacity: 1
+    transform: translateX(0px)
+  &__box.hide &__stars .stars__preview
+    opacity: 0
+    transform: translateY(-150px)
+  &__box.show &__stars .stars__preview
+    opacity: 1
+    transform: translateY(0px)
+  &__box.hide &__stars .stars__preview:first-child
+    transition-delay: .2s, .2s
+  &__box.hide &__stars .stars__preview:nth-child(2)
+    transition-delay: .3s, .3s
+  &__box.hide &__stars .stars__preview:nth-child(3)
+    transition-delay: .4s, .4s
+  &__box.hide &__stars .stars__preview:nth-child(4)
+    transition-delay: .5s, .5s
+  &__box.hide &__stars .stars__preview:nth-child(5)
+    transition-delay: .6s, .6s
+  &__box.show &__stars .stars__preview:first-child
+    transition-delay: .6s, .6s
+  &__box.show &__stars .stars__preview:nth-child(2)
+    transition-delay: .5s, .5s
+  &__box.show &__stars .stars__preview:nth-child(3)
+    transition-delay: .4s, .4s
+  &__box.show &__stars .stars__preview:nth-child(4)
+    transition-delay: .3s, .3s
+  &__box.show &__stars .stars__preview:nth-child(5)
+    transition-delay: .2s, .2s
   &__preview
     flex: 0 0 66.85%
   &__pic
+    opacity: 0
+    transform: scale(0) 
     font-size: 0
+    transition: opacity .6s .6s, visibility .6s .6s, transform .8s .6s
   &__img
     width: 100% 
   &__wrap
@@ -89,15 +139,25 @@ a
     z-index: 99  
     &.visible
       display: flex
+  &__menu.visible &__item:first-child
+    transform: translateX(0px)
+    opacity: 1
   &__item
     margin-bottom: 20px
     +fm
     font-size: 20px
+    opacity: 0 
     color: $red 
+    transition: opacity 1.4s .6s, transform 1.4s .6s 
     &:last-child
       margin-bottom: 0
+    &:first-child
+      transform: translateX(300px)
   &__body
     margin-bottom: 30px
+    opacity: 0
+    transform: translateX(-70px)
+    transition: opacity .6s .5s, transform .6s .5s
   &__title
     margin-top: -10px
     margin-left: -75px
@@ -113,6 +173,7 @@ a
     right: 25px
     display: flex
     flex-direction: column
+    z-index: 20
   &__number
     margin-bottom: 42px
     +fm
@@ -120,26 +181,46 @@ a
     line-height: 1
     color: rgba($black, .15) 
     cursor: pointer
+    transition: transform .2s, color .2s
     &:last-child
       margin-bottom: 0
     &.active
       color: $black 
+    &:hover
+      transform: scale(1.2)
+      color: rgba($black, .75) 
+  &__footer
+    opacity: 0
+    transform: translateX(70px)
+    transition: opacity .6s .5s, transform .6s .5s
   &__text
     max-width: 260px
     margin-bottom: 10px
     color: rgba($black, .35)
   &__link
+    display: inline-block
     +fm
     font-size: 12px
     text-transform: uppercase
     letter-spacing: 3px 
     color: $red 
+    transition: transform .2s 
     &:hover
-      animation-name: bounceIn
+      transform: scale(1.1)
   &__burger
     position: absolute
     top: 25px
     right: 25px
+    animation-name: rotate
+    animation-duration: 2s
+    animation-iteration-count: infinite  
+  
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
 
 .burger 
   width: 50px
@@ -155,7 +236,7 @@ a
 
 
 .isNavOpen 
-  overflow: hidden;
+  overflow: hidden
 
 .stars
   display: flex
@@ -163,6 +244,9 @@ a
   &__preview
     margin-right: 7px
     font-size: 0
+    transform: translateY(-150px)
+    opacity: 0 
+    transition: opacity .6s 1s, transform .6s 1s
     &:last-child
       margin-right: 0
   &__pic

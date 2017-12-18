@@ -2427,7 +2427,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             item.hide();
             item.eq(indexNav).fadeIn();
             return false;
+            item.addClass('hide');
         });
+    });
+})();
+
+// contacts
+(function () {
+    var contactsBtn = $('.js-contacts-btn'),
+        map = $('.js-map'),
+        form = $('.js-form'),
+        link = form.find('.js-form-link');
+
+    contactsBtn.on('click', function (e) {
+        e.preventDefault();
+        contactsBtn.toggleClass('hidden');
+        map.toggleClass('hidden');
+        form.toggleClass('visible');
+    });
+
+    link.on('click', function (e) {
+        e.preventDefault();
+        contactsBtn.trigger('click');
     });
 })();
 
