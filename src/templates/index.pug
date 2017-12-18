@@ -12,44 +12,95 @@ block content
 				a.main__item(href="#") menu item
 				a.main__item(href="#") menu item
 				a.main__item(href="#") menu item
-			.main__inner.js-tabs
-				.main__preview
-					.main__pic.js-tabs-item(style="display: none;" id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
-						img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
-					.main__pic.js-tabs-item(id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
-						img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
-					.main__pic.js-tabs-item(style="display: none;" id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
-						img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
-					.main__pic.js-tabs-item(style="display: none;" id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
-						img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
-				.main__wrap
-					button.main__burger.burger
-						svg#burger-svg(data-name='Layer 1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 50 50')
-							title Show / Hide Navigation
-							rect.burger-svg__base(width='50', height='50', fill='#1f201c')
-							g.burger-svg__bars(fill='#fff')
-								rect.burger-svg__bar.burger-svg__bar-1(x='14', y='18', width='22', height='2')
-								rect.burger-svg__bar.burger-svg__bar-2(x='14', y='24', width='22', height='2')
-								rect.burger-svg__bar.burger-svg__bar-3(x='14', y='30', width='22', height='2')
-					.main__stars.stars.wow.fadeInUp(data-wow-delay=".3s")
-						.stars__preview
-							img.stars__pic(src="img/star.png")
-						.stars__preview
-							img.stars__pic(src="img/star.png")
-						.stars__preview
-							img.stars__pic(src="img/star.png")
-						.stars__preview
-							img.stars__pic(src="img/star.png")
-					.main__body.wow.fadeInUp(data-wow-delay=".6s")
-						.main__title Out of <br>the <br>world
-						.main__list
-							.main__number.js-tabs-link 01
-							.main__number.js-tabs-link.active 02
-							.main__number.js-tabs-link 03
-							.main__number.js-tabs-link 04
-					.main__footer.wow.fadeInUp(data-wow-delay=".9s")
-						.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
-						a.main__link(href="#") read more
+			.main__inner.js-list
+				button.main__burger.burger
+					svg#burger-svg(data-name='Layer 1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 50 50')
+						title Show / Hide Navigation
+						rect.burger-svg__base(width='50', height='50', fill='#1f201c')
+						g.burger-svg__bars(fill='#fff')
+							rect.burger-svg__bar.burger-svg__bar-1(x='14', y='18', width='22', height='2')
+							rect.burger-svg__bar.burger-svg__bar-2(x='14', y='24', width='22', height='2')
+							rect.burger-svg__bar.burger-svg__bar-3(x='14', y='30', width='22', height='2')
+				.main__list
+					.main__number.js-link 01
+					.main__number.js-link.active 02
+					.main__number.js-link 03
+					.main__number.js-link 04
+				.main__container
+					.main__box.js-item(style="display: none;")
+						.main__preview
+							.main__pic(id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
+								img.main__img(src="img/pic-2.jpg" class="--obj-fit-cover wp-post-image" alt="img")
+						.main__wrap
+							.main__stars.stars.wow.fadeInUp(data-wow-delay=".3s")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+							.main__body.wow.fadeInUp(data-wow-delay=".6s")
+								.main__title In to <br>the <br>world
+							.main__footer.wow.fadeInUp(data-wow-delay=".7s")
+								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
+								a.main__link(href="#") read more
+					.main__box.js-item
+						.main__preview
+							.main__pic(id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
+								img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
+						.main__wrap
+							.main__stars.stars.wow.fadeInUp(data-wow-delay=".3s")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+							.main__body.wow.fadeInUp(data-wow-delay=".6s")
+								.main__title Out of <br>the <br>world
+							.main__footer.wow.fadeInUp(data-wow-delay=".7s")
+								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
+								a.main__link.wow.bounceIn(href="#") read more
+					.main__box.js-item(style="display: none;")
+						.main__preview
+							.main__pic(id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
+								img.main__img(src="img/pic-2.jpg" class="--obj-fit-cover wp-post-image" alt="img")
+						.main__wrap
+							.main__stars.stars.wow.fadeInUp(data-wow-delay=".3s")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+							.main__body.wow.fadeInUp(data-wow-delay=".6s")
+								.main__title Out of <br>the <br>world
+							.main__footer.wow.fadeInUp(data-wow-delay=".7s")
+								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
+								a.main__link(href="#") read more
+					.main__box.js-item(style="display: none;")
+						.main__preview
+							.main__pic(id="aos-trigger-cdh-title" class="ynsh-left se2-white aos-init aos-animate" data-aos="slide-effect-2")
+								img.main__img(src="img/pic-1.jpg" class="--obj-fit-cover wp-post-image" alt="img")
+						.main__wrap
+							.main__stars.stars.wow.fadeInUp(data-wow-delay=".3s")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+								.stars__preview
+									img.stars__pic(src="img/star.png")
+							.main__body.wow.fadeInUp(data-wow-delay=".6s")
+								.main__title In to <br>the <br>world
+							.main__footer.wow.fadeInUp(data-wow-delay=".7s")
+								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
+								a.main__link(href="#") read more
 
 
 

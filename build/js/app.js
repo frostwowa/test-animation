@@ -2412,21 +2412,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }();
 }).call(this);
 
-(function () {
-    $('.js-price-btn').hover(function () {
-        $(this).parents('.js-price').find('.js-price-head').css('background-color', '#2E2EFE');
-    }, function () {
-        $(this).parents('.js-price').find('.js-price-head').css('background-color', '#5b6ceb');
-    });
-})();
-
 // tabs
 (function () {
-    var tabs = $('.js-tabs');
+    var tabs = $('.js-list');
     tabs.each(function () {
         var thisTabs = $(this),
-            nav = thisTabs.find('.js-tabs-link'),
-            item = thisTabs.find('.js-tabs-item');
+            nav = thisTabs.find('.js-link'),
+            item = thisTabs.find('.js-item');
         nav.on('click', function () {
             var thisNav = $(this),
                 indexNav = thisNav.index();
@@ -2434,35 +2426,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             thisNav.addClass('active');
             item.hide();
             item.eq(indexNav).fadeIn();
-
-            if (thisNav.hasClass('js-tabs-link-map')) {
-                google.maps.event.trigger(map, "resize");
-            }
-
-            return false;
-        });
-    });
-})();
-
-// tabs
-(function () {
-    var tabs = $('.js-tabs');
-    tabs.each(function () {
-        var thisTabs = $(this),
-            nav = thisTabs.find('.js-tabs-link'),
-            item = thisTabs.find('.js-tabs-item');
-        nav.on('click', function () {
-            var thisNav = $(this),
-                indexNav = thisNav.index();
-            nav.removeClass('active');
-            thisNav.addClass('active');
-            item.hide();
-            item.eq(indexNav).fadeIn();
-
-            if (thisNav.hasClass('js-tabs-link-map')) {
-                google.maps.event.trigger(map, "resize");
-            }
-
             return false;
         });
     });
