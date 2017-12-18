@@ -4,16 +4,16 @@ title: Index Page
 extends layouts/_layout
 block content
 	.center
-		.main
-			.main__menu.js-menu
-				a.main__item(href="#") menu item
-				a.main__item(href="#") menu item
-				a.main__item(href="#") menu item
-				a.main__item(href="#") menu item
-				a.main__item(href="#") menu item
-				a.main__item(href="#") menu item
-			.main__inner.js-list
-				button.main__burger.burger
+		.main.js-main
+			.main__menu.js-main-menu
+				a.main__item(href="#") Menu item 1
+				a.main__item(href="#") Menu item 2
+				a.main__item(href="#") Menu item 3
+				a.main__item(href="#") Menu item 4
+				a.main__item(href="#") Menu item 5
+				a.main__item(href="#") Menu item 6
+			.main__inner
+				button.main__burger.burger.js-main-burger
 					svg#burger-svg(data-name='Layer 1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 50 50')
 						title Show / Hide Navigation
 						rect.burger-svg__base(width='50', height='50', fill='#1f201c')
@@ -22,12 +22,12 @@ block content
 							rect.burger-svg__bar.burger-svg__bar-2(x='14', y='24', width='22', height='2')
 							rect.burger-svg__bar.burger-svg__bar-3(x='14', y='30', width='22', height='2')
 				.main__list
-					.main__number.js-link 01
-					.main__number.js-link.active 02
-					.main__number.js-link 03
-					.main__number.js-link 04
+					.main__number.js-main-link.active 01
+					.main__number.js-main-link 02
+					.main__number.js-main-link 03
+					.main__number.js-main-link 04
 				.main__container
-					.main__box.js-item(style="display: none;")
+					.main__box.visible.js-main-box
 						.main__preview
 							.main__pic
 								img.main__img(src="img/pic-2.jpg")
@@ -46,7 +46,7 @@ block content
 							.main__footer
 								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
 								a.main__link(href="#") read more
-					.main__box.js-item
+					.main__box.js-main-box
 						.main__preview
 							.main__pic
 								img.main__img(src="img/pic-1.jpg")
@@ -65,7 +65,7 @@ block content
 							.main__footer
 								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
 								a.main__link(href="#") read more
-					.main__box.js-item(style="display: none;")
+					.main__box.js-main-box
 						.main__preview
 							.main__pic
 								img.main__img(src="img/pic-2.jpg")
@@ -84,7 +84,7 @@ block content
 							.main__footer
 								.main__text I'm impressed with the people from Chicago. Hollywood is hype, New York <br>is talk, Chicago is work
 								a.main__link(href="#") read more
-					.main__box.js-item(style="display: none;")
+					.main__box.js-main-box
 						.main__preview
 							.main__pic
 								img.main__img(src="img/pic-1.jpg")
